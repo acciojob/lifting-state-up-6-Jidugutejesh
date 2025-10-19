@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TodoList({ data, changeData }) {
+export default function TodoList({ data, changedata }) {
   return (
     <div>
       <h2>Child Component</h2>
@@ -8,7 +8,11 @@ export default function TodoList({ data, changeData }) {
         {data.map((todo) => (
           <li key={todo.id}>
             {todo.text}{" "}
-            {todo.completed ? null : ( <button onClick={() => changeData(todo.id)}>Complete</button> )}
+            {todo.completed ? (
+              <span>✅ Completed</span>
+            ) : (
+              <button onClick={() => changedata(todo.id)}>Complete</button>
+            )}
           </li>
         ))}
       </ul>
