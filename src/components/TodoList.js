@@ -9,7 +9,7 @@ export default function TodoList({ todos, onComplete }) {
           <li key={todo.id}>
             {todo.text}{" "}
             {todo.completed ? (
-              <span>✅ Completed</span>
+              <span>Completed</span>
             ) : (
               <button onClick={() => onComplete(todo.id)}>Complete</button>
             )}
