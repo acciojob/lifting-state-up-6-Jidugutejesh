@@ -1,14 +1,1 @@
-it("should mark a todo as completed when the complete button is clicked", () => {
-  // 1. Click the complete button for the first todo
-  cy.get('[data-testid="complete-btn-1"]').click();
-
-  // 2. Assert that the button is gone
-  cy.get('[data-testid="complete-btn-1"]').should("not.exist");
-
-  // 3. (Optional) Check that the todo text has line-through style
-  cy.get('[data-testid="todo-1"]').should(
-    "have.css",
-    "text-decoration-line",
-    "line-through"
-  );
-});
+{}
