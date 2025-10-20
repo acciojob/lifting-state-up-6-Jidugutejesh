@@ -1,12 +1,18 @@
 import React from "react";
-import TodoItem from "./TodoItem";
 
-export default function TodoList({ todos, markCompleted }) {
+export default function TodoList({ todos, handleComplete }) {
   return (
-    <div>
+    <ul>
       {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} markCompleted={markCompleted} />
+        <li key={todo.id}>
+          {todo.text}{" "}
+          {todo.completed ? (
+            <span>Completed</span>
+          ) : (
+            <button onClick={() => handleComplete(todo.id)}>Complete</button>
+          )}
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
