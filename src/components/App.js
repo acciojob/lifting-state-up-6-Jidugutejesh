@@ -3,11 +3,12 @@ import TodoList from "./TodoList";
 
 export default function App() {
   const [todos, setTodos] = useState([
-    { id: 1, text: "Learn React", completed: false },
-    { id: 2, text: "Build a project", completed: false },
+    { id: 1, text: "Do Homework", completed: false },
+    { id: 2, text: "Wash Clothes", completed: false },
+    { id: 3, text: "Go for Walk", completed: false },
   ]);
 
-  const markCompleted = (id) => {
+  const handleComplete = (id) => {
     const updated = todos.map((todo) =>
       todo.id === id ? { ...todo, completed: true } : todo
     );
@@ -17,7 +18,7 @@ export default function App() {
   return (
     <div>
       <h1>Todo App</h1>
-      <TodoList todos={todos} markCompleted={markCompleted} />
+      <TodoList todos={todos} handleComplete={handleComplete} />
     </div>
   );
 }
