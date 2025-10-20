@@ -8,7 +8,6 @@ function App() {
     { id: 3, text: "What are you doing", completed: false },
   ]);
 
-  // mark a todo as completed
   const handleComplete = (id) => {
     const updatedTodos = todos.map((todo) =>
       todo.id === id ? { ...todo, completed: true } : todo
