@@ -8,7 +8,7 @@ function App() {
     { id: 3, text: "What are you doing", completed: false },
   ]);
 
-  // 👇 Function must be inside App()
+  // mark a todo as completed
   const handleComplete = (id) => {
     const updatedTodos = todos.map((todo) =>
       todo.id === id ? { ...todo, completed: true } : todo
@@ -16,11 +16,10 @@ function App() {
     setTodos(updatedTodos);
   };
 
-  // 👇 return is correctly placed inside App()
   return (
     <div>
       <h1>Parent Component</h1>
-      <TodoList data={todos} changedata={handleComplete} />
+      <TodoList todos={todos} onComplete={handleComplete} />
     </div>
   );
 }
